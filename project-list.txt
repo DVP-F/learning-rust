@@ -1,0 +1,66 @@
+1. "Hello, World!" with User Input
+
+    Description: Modify the classic "Hello, World!" program to ask the user for their name and greet them individually.
+    Key Concepts: Basic syntax, variables, string manipulation.
+    Extension: Add conditional greetings (e.g., "Good morning, [name]!" based on the time of day).
+
+2. Simple Calculator
+
+    Description: Build a command-line calculator that adds, subtracts, multiplies, or divides two numbers.
+    Key Concepts: Variables, data types, functions, control flow (if/else).
+    Extension: Add error handling for division by zero.
+
+3. Number Guessing Game
+
+    Description: Create a game where the user guesses a randomly generated number (use a hardcoded value initially).
+    Key Concepts: Control flow (loop, if/else), user input, comparisons.
+    Extension: Add hints like "Too high!" or "Too low!" and count the number of attempts.
+
+4. To-Do List Manager
+
+    Description: Store and manage a list of tasks using vectors. Allow users to add, view, and delete tasks.
+    Key Concepts: Vectors, loops, string manipulation.
+    Extension: Save tasks to a text file (using file handling later).
+
+5. Unit Converter
+
+    Description: Convert units like Celsius to Fahrenheit, miles to kilometers, or kilograms to grams.
+    Key Concepts: Functions, control flow, user input.
+    Extension: Use enums to represent units (e.g., enum Temperature { Celsius, Fahrenheit }).
+
+6. Text Analyzer
+
+    Description: Analyze user input to count words, vowels, or specific characters.
+    Key Concepts: Strings, loops, conditionals.
+    Extension: Find the most frequent word or reverse the input text.
+
+7. Note-Taking CLI
+
+    Description: Build a simple command-line tool to create, read, and delete notes stored in a text file.
+    Key Concepts: File handling (std::fs), user input, error handling.
+    Extension: Add a search feature to find notes by keyword.
+
+8. Contact Book
+
+    Description: Use structs to store contact details (name, phone, email) and allow users to add/view contacts.
+    Key Concepts: Structs, vectors, loops.
+    Extension: Save contacts to a file and implement a search/delete feature.
+
+9. Mad Libs Game
+
+    Description: Create a fun word game where users fill in blanks (e.g., nouns, verbs) to generate a silly story.
+    Key Concepts: Strings, user input, formatting.
+    Extension: Use a template file for stories and load it dynamically.
+
+10. CLI Quiz Game
+
+    Description: Build a multiple-choice quiz with scoring. Ask questions and validate answers.
+    Key Concepts: Control flow, functions, structs (for questions), vectors.
+    Extension: Load questions from a file or add a timer per question.
+
+Tips for Success
+
+    Start Small: Break projects into tiny tasks (e.g., write a function for one operation in the calculator).
+    Use the Rust Playground: Test snippets online before building full apps.
+    Iterate: Build a "minimum viable project" first, then add features as you learn more.
+    Check the Docs: Rust’s official documentation is beginner-friendly. Use rustc --explain [error_code] for help.

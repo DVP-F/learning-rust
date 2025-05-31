@@ -1,0 +1,11 @@
+either run:
+
+>> curl https://sh.rustup.rs -sSf | sh 
+
+or download from https://www.rust-lang.org/ 
+
+or on WSL you can use 
+
+>> curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh 
+
+bc linux :3 
