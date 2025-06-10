@@ -436,17 +436,17 @@ and {:?} for data structures like arrays and vectors - when printing the entire 
 
 	// enumsssss (is that a cpp reference??) 
 	enum Direction {
-		Up,
-		Down,
+		// Up,
+		// Down,
 		Left,
-		Right
+		// Right
 	}
 	let my_direction = Direction::Left;
 	match my_direction {
-		Direction::Up => println!("Going up"),
-		Direction::Down => println!("Going down"),
+		// Direction::Up => println!("Going up"),
+		// Direction::Down => println!("Going down"),
 		Direction::Left => println!("Going left"),
-		Direction::Right => println!("Going right"),
+		// Direction::Right => println!("Going right"),
 	}
 
 	enum LoginStatus {
@@ -485,4 +485,3 @@ fn adder(a: i32, b: i32) -> i32 {
 
 // SCOPE: https://www.w3schools.com/rust/rust_scope.php - dumped to ../scope.md 
 // extremely similar to cpp/py/js though. 
-
