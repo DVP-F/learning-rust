@@ -1,7 +1,7 @@
 use chrono::Local;
 use regex::Regex;
 // #[macro_use] extern crate text_io; // wouldve been nice but oh well cant bother to fixies :3
-use std::io::{self, BufRead};
+use std::io::{self, Write}; //::{self, BufRead};
 
 
 fn string_to_uint32(time_str: &str) -> Result<u32, String> {
@@ -20,7 +20,7 @@ fn time_category(time: u32) -> u16 {
 		return 0;
 	}
 
-	;let morning:   u32 = 010000 * 06 // + 0100 * 30 // 063000 - 06:30.00
+	;let morning:   u32 = 010000 * 06 // + 01 * 30 // 0630 - 06:30
 	;let afternoon: u32 = 010000 * 12
 	;let evening:   u32 = 010000 * 18
 	;let next_day:  u32 = 010000 * 24
@@ -30,16 +30,20 @@ fn time_category(time: u32) -> u16 {
 		d if d >= morning   && d < afternoon => 1, // morning
 		d if d >= afternoon && d < evening   => 2, // afternoon
 		d if d >= evening   && d < next_day  => 3, // eve
-		d if d >= next_day  && d < morning   => 4, // night
+		d if                   d < morning   => 4, // night
 		_ => 0
 	}
 }
 
 fn main() {
 	// let name = input("Ur nem >w< > ");
-	let stdin = io::stdin();
 	print!(" ur nem plz >ω< >> ");
-    let in_1 = stdin.lock().lines().next().unwrap().unwrap();
+	io::stdout().flush().unwrap();
+
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).expect("Failed to read line");
+	// let stdin = io::stdin();
+    // let in_1 = stdin.lock().lines().next().unwrap().unwrap();
 	println!("");
 
 	let instant_now = Local::now().to_string(); let mut time: u32 = 0;
@@ -56,9 +60,15 @@ fn main() {
 		eprintln!("Could not parse time from: {}", instant_now);
 	}
 
-	println!("Current time as uint32: {}", time)
+	println!("Current time as uint32: {}", time);
 
-	
+	match time_category(time) {
+		1 => println!("Good morning, {}", input),
+		2 => println!("Good day to you, {}", input),
+		3 => println!("Good evening, {}", input),
+		4 => println!("Enjoy you next 12 hours, {}", input),
+		0 | _ => eprintln!("Fault in parsing time.")
+	}
 
 
 
@@ -116,6 +126,20 @@ fn main() {
 }
 
 /*
+use std::io;
+
+fn main() {
+    print!(" ur nem plz >ω< >> "); // Note: uses print! (no newline)
+    io::stdout().flush().unwrap(); // **critical step to force output immediately**
+    
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).expect("Failed to read line");
+    
+    println!("\nYou entered: {}", input.trim()); // Added debug output
+}
+
+! Ignore this shit use the above tech if possible
+
 In How to read user input in Rust?
 you can see how to iterate over all lines:
 
