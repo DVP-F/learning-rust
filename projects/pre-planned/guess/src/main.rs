@@ -1,5 +1,5 @@
 use std::{io::{self, Write}};
-use rand::Rng;
+use rand::Rng; // https://docs.rs/rand/latest/rand/
 
 fn main() {
 	let mut rng = rand::rng();
